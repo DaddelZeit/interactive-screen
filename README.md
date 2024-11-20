@@ -8,11 +8,15 @@ This non-specific code is not functional on its own but requires a file setup as
 Note: the GELua file should always be renamed to something unique as to avoid inter-mod conflicts.
 
 ### Example
-The example folder contains the development files from the (Hirochi CCF)[https://www.beamng.com/resources/2020-hirochi-ccf.29318/].
+The example folder contains the development files from the [Hirochi CCF](https://www.beamng.com/resources/2020-hirochi-ccf.29318/).
 This includes custom screen extensions explained below but may not include GELua or VLua dependencies. In addition, the screen webpages themselves are included.
 The JBeam is limited to the screens.
 
 The CCF uses two screens: the Infotainment and Gauge screen. Both are connected to the screenManager, however only the infotainment screen uses manager states and triggers.
+
+### Utils
+The Utils folder has zeitScreenUtils.lua file that transforms and condenses the development files to production files.
+See documentation below.
 
 ## Basic Documentation
 ### Screen Folder Layout
@@ -105,7 +109,9 @@ You may also create custom public functions that can interface with the global e
 The Utils folder has zeitScreenUtils.lua file that transforms and condenses the development files to production files.
 Previously this was used to convert Lua files to bytecode and re-save the JSON files with Lpack, however both functionalities either do not work anymore or are ill-advised.
 Still, this is a required process. Use this GELua command to run the process:
-`extensions.reload("zeitScreenUtils"); zeitScreenUtils.buildAtPath("/vehicles/xyz/interactive_screen")`
+```lua
+extensions.reload("zeitScreenUtils"); zeitScreenUtils.buildAtPath("/vehicles/xyz/interactive_screen")
+```
 where xyz is your vehicle folder.
 
 ### Expected JS functions
