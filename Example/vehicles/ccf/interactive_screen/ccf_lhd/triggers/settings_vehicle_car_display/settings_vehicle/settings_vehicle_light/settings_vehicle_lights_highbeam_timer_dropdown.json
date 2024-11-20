@@ -1,0 +1,23 @@
+[
+    {
+        "pos": [ 0.5385,0.149,0.669 ],
+        "size": [ 0.04, 0.002, 0.009 ],
+        "id": "settings_vehicle.lights_highbeam_dropdown_1"
+    },
+    {
+        "pos": [ 0.5385,0.149,0.660 ],
+        "size": [ 0.04, 0.002, 0.009 ],
+        "id": "settings_vehicle.lights_highbeam_dropdown_2"
+    },
+    {
+        "pos": [ 0.5385,0.149,0.651 ],
+        "size": [ 0.04, 0.002, 0.009 ],
+        "id": "settings_vehicle.lights_highbeam_dropdown_3"
+    },
+
+    {
+        "pos": [ 0.5385,0.149,0.660 ],
+        "size": [ 0.04, 0.002, 0.027 ],
+        "id": "settings_vehicle.light"
+    }
+]

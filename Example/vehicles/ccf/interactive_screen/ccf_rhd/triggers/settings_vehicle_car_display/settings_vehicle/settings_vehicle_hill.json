@@ -1,0 +1,114 @@
+[
+    {
+        "pos": [ 0.41,0.155,0.6657 ],
+        "size": [ 0.09, 0.002, 0.013 ],
+        "id": "settings_vehicle.light"
+    },
+    {
+        "pos": [ 0.41,0.155,0.6527 ],
+        "size": [ 0.09, 0.002, 0.013 ],
+        "id": "settings_vehicle.aeb"
+    },
+    {
+        "pos": [ 0.41,0.155,0.6397 ],
+        "size": [ 0.09, 0.002, 0.013 ],
+        "id": "settings_vehicle.pksa"
+    },
+    {
+        "pos": [ 0.41,0.155,0.6267 ],
+        "size": [ 0.09, 0.002, 0.013 ],
+        "id": "settings_vehicle.hill"
+    },
+    {
+        "pos": [ 0.41,0.155,0.6137 ],
+        "size": [ 0.09, 0.002, 0.013 ],
+        "id": "settings_vehicle.ass"
+    },
+
+    {
+        "pos": [ 0.5145,0.149,0.662 ],
+        "size": [ 0.026, 0.002, 0.015 ],
+        "id": "settings_vehicle.hill_start_mode_toggle"
+    },
+    {
+        "pos": [ 0.541,0.151,0.662 ],
+        "size": [ 0.026, 0.002, 0.015 ],
+        "id": "settings_vehicle.hill_start_toggle"
+    },
+    {
+        "pos": [ 0.5145,0.149,0.624 ],
+        "size": [ 0.026, 0.002, 0.015 ],
+        "id": "settings_vehicle.hill_descent_mode_toggle"
+    },
+    {
+        "pos": [ 0.541,0.151,0.624 ],
+        "size": [ 0.026, 0.002, 0.015 ],
+        "id": "settings_vehicle.hill_descent_toggle"
+    },
+
+    /* needs be in every settings_general file */
+    {
+        "pos": [ 0.405, 0.16, 0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "settings_general"
+    },
+    {
+        "pos": [ 0.452,0.155,0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "settings_gauges"
+    },
+    {
+        "pos": [ 0.499,0.15,0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "settings_audio"
+    },
+    {
+        "pos": [ 0.546,0.145,0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "settings_vehicle"
+    },
+
+    /* these need to be in EVERY file */
+    {
+        "pos": [ 0.565,0.205,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.navi",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.532,0.209,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.audio",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.498,0.212,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.settings",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.463,0.216,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.home",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.427,0.219,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.car",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.355,0.225,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.ambience",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.6075,0.205,0.5635 ],
+        "size": [ 0.03, 0.03, 0.03 ],
+        "id": "audio.volume",
+        "type": "scroll"
+    }
+]

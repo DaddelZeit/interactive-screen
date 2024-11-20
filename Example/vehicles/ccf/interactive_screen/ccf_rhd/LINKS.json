@@ -1,0 +1,261 @@
+{
+    // STATE CHANGES
+    // MAINANALOG
+    "MAINANALOG.navi": "navi",
+    "MAINANALOG.audio": "audio",
+    "MAINANALOG.settings": "settings_general",
+    "MAINANALOG.home": "home",
+    "MAINANALOG.car": "car/car_mode",
+    "MAINANALOG.phone": "phone",
+    "MAINANALOG.ambience": "ambience",
+
+    "navi": "navi",
+    "audio": "audio",
+    "settings": "settings_general",
+    "car": "car/car_mode",
+    "ambience": "ambience",
+
+    // NAVI
+    "navi.destination": "navi/destination",
+
+    // SETTINGS GENERAL
+    "settings_general": "settings_general",
+    "settings_general.settings_general_time": "settings_general/settings_general_time",
+    "settings_general.settings_general_time.settings_general_time_dropdown": "settings_general/settings_general_time/settings_general_time_dropdown",
+    "settings_general.settings_general_extui": "settings_general/settings_general_extui",
+    "settings_general.settings_general_lang": "settings_general/settings_general_lang",
+    "settings_general.settings_general_units": "settings_general/settings_general_units",
+    "settings_general.settings_general_connectivity": "settings_general/settings_general_connectivity",
+    "settings_general.settings_general_system": "settings_general/settings_general_system",
+    "settings_general.settings_general_reset": "settings_general/settings_general_reset",
+    "settings_general.settings_general_reset_odometer": "settings_general/settings_general_reset/settings_general_reset_prompt/odometer",
+    "settings_general.settings_general_reset_trip": "settings_general/settings_general_reset/settings_general_reset_prompt/trip",
+    "settings_general.settings_general_reset_system": "settings_general/settings_general_reset/settings_general_reset_prompt/system",
+    "settings_general.settings_general_reset_audio": "settings_general/settings_general_reset/settings_general_reset_prompt/audio",
+
+    // SETTINGS GAUGES
+    "settings_gauges": "settings_gauges",
+    "settings_gauges_right": "settings_gauges/settings_gauges_right",
+    "settings_gauges_left": "settings_gauges/settings_gauges_left/settings_gauges_left_overview",
+    "settings_gauges_left_economy": "settings_gauges/settings_gauges_left/settings_gauges_left_economy",
+    "settings_gauges_left_economy.dropdown_1": "settings_gauges/settings_gauges_left/settings_gauges_left_economy/settings_gauges_left_economy_dropdown/1",
+    "settings_gauges_left_economy.dropdown_2": "settings_gauges/settings_gauges_left/settings_gauges_left_economy/settings_gauges_left_economy_dropdown/2",
+    "settings_gauges_left_economy.dropdown_3": "settings_gauges/settings_gauges_left/settings_gauges_left_economy/settings_gauges_left_economy_dropdown/3",
+    "settings_gauges_left_economy.dropdown_4": "settings_gauges/settings_gauges_left/settings_gauges_left_economy/settings_gauges_left_economy_dropdown/4",
+
+    // SETTINGS VEHICLE
+    "settings_vehicle": "settings_vehicle_car_display/settings_vehicle",
+    "settings_vehicle.light": "settings_vehicle_car_display/settings_vehicle/settings_vehicle_light",
+    "settings_vehicle.lights_entry_exit_timer_dropdown": "settings_vehicle_car_display/settings_vehicle/settings_vehicle_light/settings_vehicle_lights_entry_exit_timer_dropdown",
+    "settings_vehicle.lights_highbeam_dropdown": "settings_vehicle_car_display/settings_vehicle/settings_vehicle_light/settings_vehicle_lights_highbeam_timer_dropdown",
+    "settings_vehicle.lights_mode_dropdown": "settings_vehicle_car_display/settings_vehicle/settings_vehicle_light/settings_vehicle_lights_mode_dropdown",
+    "settings_vehicle.aeb": "settings_vehicle_car_display/settings_vehicle/settings_vehicle_aeb",
+    "settings_vehicle.pksa": "settings_vehicle_car_display/settings_vehicle/settings_vehicle_pksa",
+    "settings_vehicle.hill": "settings_vehicle_car_display/settings_vehicle/settings_vehicle_hill",
+    "settings_vehicle.ass": "settings_vehicle_car_display/settings_vehicle/settings_vehicle_ass",
+
+    // SETTINGS AUDIO
+    "settings_audio": "settings_audio/settings_audio_overview",
+    "settings_audio_notifications": "settings_audio/settings_audio_notifications",
+
+    // CAR
+    "car_mode": "car/car_mode",
+    "car_trip": "car/car_trip",
+    "car_tpms": "car/car_tpms",
+
+    // POPUP
+    "popup.ok": ["function(s) screenManager.hideBox() end"],
+    "popup.firststart_ok": ["function(s) s['firststart'] = false; screenManager.hideBox() end"],
+
+    // VALUES
+    // NAVI
+    "navi.3d/2d": ["function(s) s['navi.3d/2d'] = not s['navi.3d/2d'] end", "s.mapState[0] = VALUE"],
+    "navi.north_lock": ["function(s) if not screenManager.getSetting('navi.move_x') then s['navi.north_lock'] = not s['navi.north_lock']; end; screenManager.setSettingTemp('navi.move_x', nil); screenManager.setSettingTemp('navi.move_y', nil); end", "s.mapState[1] = VALUE{navi.north_lock}; s.navi_move_x = undefined; s.navi_move_y = undefined", "navi_move"],
+    "navi.satellite": ["function(s) screenManager.showBox('SATELLITE DATA\\n NOT AVAILABLE', 'OK') end"],
+    "navi.move_map": ["function(ts, xmove, ymove) ts['navi.move_x'] = (ts['navi.move_x'] or 0) + xmove; ts['navi.move_y'] = (ts['navi.move_y'] or 0) + ymove; end", "s.navi_move_x = VALUE{navi.move_x}; s.navi_move_y = VALUE{navi.move_y}", "navi_move"],
+
+    "navi.destination_input": ["function(ts, val, cursorPos) ts['navi.destination_cursor_pos'] = cursorPos; ts['navi.destination_input'] = val; screenManager.sendSearchRequest(val) end", "s.navi_search = 'VALUE{navi.destination_input}'; s.navi_cursor = VALUE{navi.destination_cursor_pos}; s.navi_text_offset = 0; s.last_navi_text_offset = 0;", "navi_search"],
+    "navi.destination_list_scroll": ["function(ts, val) ts['navi.destination_list_scroll'] = clamp((ts['navi.destination_list_scroll'] or 0)-val/2, 0, math.max((ts['navi_destination_list'] or 0)-6,0)); end", "s.navi_scroll = VALUE{navi.destination_list_scroll}", "navi_scroll"],
+    "navi.destination_1": ["function(ts) screenManager.setNavToDest((ts['navi.destination_list_scroll'] or 0)+1) end"],
+    "navi.destination_2": ["function(ts) screenManager.setNavToDest((ts['navi.destination_list_scroll'] or 0)+2) end"],
+    "navi.destination_3": ["function(ts) screenManager.setNavToDest((ts['navi.destination_list_scroll'] or 0)+3) end"],
+    "navi.destination_4": ["function(ts) screenManager.setNavToDest((ts['navi.destination_list_scroll'] or 0)+4) end"],
+    "navi.destination_5": ["function(ts) screenManager.setNavToDest((ts['navi.destination_list_scroll'] or 0)+5) end"],
+    "navi.destination_6": ["function(ts) screenManager.setNavToDest((ts['navi.destination_list_scroll'] or 0)+6) end"],
+    "navi.destination_clear": ["function(ts) screenManager.setEndPoint() end"],
+
+    // AUDIO
+    "audio.playlists": ["function(s) if zeitRadio then s['audio.radioType'] = 2; screenManager.updateRadioType(s['audio.radioType']) else screenManager.showBox('PLEASE INSTALL\\nZEIT RADIO (ZEIDIO)', 'OK') end end"],
+    "audio.fm/dab": ["function(s) s['audio.radioType'] = (s['audio.radioType']+1)%2; screenManager.updateRadioType(s['audio.radioType']) end"],
+    "audio.usb": ["function(s) screenManager.showBox('NO DEVICE CONNECTED', 'OK') end"],
+    "audio.skiplist_f": ["function(s) screenManager.changePlaylist(1, false) end"],
+    "audio.skipsong_f": ["function(s) screenManager.changeSong(1, false) end"],
+    "audio.play": ["function(s) screenManager.pausePlaySong() end"],
+    "audio.skipsong_b": ["function(s) screenManager.changeSong(-1, false) end"],
+    "audio.skiplist_b": ["function(s) screenManager.changePlaylist(-1, false) end"],
+    "audio.song_progress": ["function(s, xleft, xright) screenManager.skipTo(xleft/(xleft+xright)) end"],
+    "audio.list_scroll": ["function(ts, val) val = clamp(val, -1, 1); ts['audio.list_scroll'] = clamp((ts['audio.list_scroll'] or 0)-val,0,ts['playlistSize']-4) end", "s.audio_list_scroll = VALUE", "audio_list_scroll"],
+    "audio.volume": ["function(s, val) screenManager.changeVol(val/2) end"],
+
+    "audio.list_entry1": ["function(ts) screenManager.changeSong(2+(ts['audio.list_scroll'] or 0), true) end"],
+    "audio.list_entry2": ["function(ts) screenManager.changeSong(3+(ts['audio.list_scroll'] or 0), true) end"],
+    "audio.list_entry3": ["function(ts) screenManager.changeSong(4+(ts['audio.list_scroll'] or 0), true) end"],
+    "audio.list_entry4": ["function(ts) screenManager.changeSong(5+(ts['audio.list_scroll'] or 0), true) end"],
+
+    // SETTINGS GENERAL TIME
+    "settings_general.settings_time_12h": ["function(s) s['settings.time_12h'] = true end", "s.settings_time_12h = VALUE{settings.time_12h}", "time"],
+    "settings_general.settings_time_24h": ["function(s) s['settings.time_12h'] = false end", "s.settings_time_12h = VALUE{settings.time_12h}", "time"],
+    "settings_general.settings_general_time_dropdown_0": ["function(s) s['settings.timezone'] = 0 end", "s.timezone = VALUE{settings.timezone}", "time"],
+    "settings_general.settings_general_time_dropdown_1": ["function(s) s['settings.timezone'] = 1 end", "s.timezone = VALUE{settings.timezone}", "time"],
+    "settings_general.settings_time_manual_offset_h_+": ["function(s) s['settings.time_manual_offset_h'] = s['settings.time_manual_offset_h']+1 end", "s.time_manual_offset_h = VALUE{settings.time_manual_offset_h}", "time"],
+    "settings_general.settings_time_manual_offset_h_reset": ["function(s) s['settings.time_manual_offset_h'] = 0 end", "s.time_manual_offset_h = VALUE{settings.time_manual_offset_h}", "time"],
+    "settings_general.settings_time_manual_offset_h_-": ["function(s) s['settings.time_manual_offset_h'] = s['settings.time_manual_offset_h']-1 end", "s.time_manual_offset_h = VALUE{settings.time_manual_offset_h}", "time"],
+    "settings_general.settings_time_manual_offset_m_+": ["function(s) s['settings.time_manual_offset_m'] = s['settings.time_manual_offset_m']+1 end", "s.time_manual_offset_m = VALUE{settings.time_manual_offset_m}", "time"],
+    "settings_general.settings_time_manual_offset_m_reset": ["function(s) s['settings.time_manual_offset_m'] = 0 end", "s.time_manual_offset_m = VALUE{settings.time_manual_offset_m}", "time"],
+    "settings_general.settings_time_manual_offset_m_-": ["function(s) s['settings.time_manual_offset_m'] = s['settings.time_manual_offset_m']-1 end", "s.time_manual_offset_m = VALUE{settings.time_manual_offset_m}", "time"],
+
+    // SETTINGS GENERAL EXT UI
+    "settings_general.settings_android_1_enabled": ["function(s) s['settings.android_1'] = true end", "s.settings_android_1 = VALUE{settings.android_1}", "settings_android_carplay"],
+    "settings_general.settings_android_1_disabled": ["function(s) s['settings.android_1'] = false end", "s.settings_android_1 = VALUE{settings.android_1}", "settings_android_carplay"],
+    "settings_general.settings_android_2_enabled": ["function(s) s['settings.android_2'] = true end", "s.settings_android_2 = VALUE{settings.android_2}", "settings_android_carplay"],
+    "settings_general.settings_android_2_disabled": ["function(s) s['settings.android_2'] = false end", "s.settings_android_2 = VALUE{settings.android_2}", "settings_android_carplay"],
+    "settings_general.settings_carplay_1_enabled": ["function(s) s['settings.carplay_1'] = true end", "s.settings_carplay_1 = VALUE{settings.carplay_1}", "settings_android_carplay"],
+    "settings_general.settings_carplay_1_disabled": ["function(s) s['settings.carplay_1'] = false end", "s.settings_carplay_1 = VALUE{settings.carplay_1}", "settings_android_carplay"],
+    "settings_general.settings_carplay_2_enabled": ["function(s) s['settings.carplay_2'] = true end", "s.settings_carplay_2 = VALUE{settings.carplay_2}", "settings_android_carplay"],
+    "settings_general.settings_carplay_2_disabled": ["function(s) s['settings.carplay_2'] = false end", "s.settings_carplay_2 = VALUE{settings.carplay_2}", "settings_android_carplay"],
+
+    // SETTINGS GENERAL UNIT
+    "settings_general.settings_unit_change_length": ["function(s) s['settings.unit_length_num'] = (s['settings.unit_length_num']+1)%2; s['settings.unit_length'] = screenManager.getUnit(s, 'length', s['settings.unit_length_num']) end", "s.settings_unit_length = 'VALUE{settings.unit_length}'", "units"],
+    "settings_general.settings_unit_change_temperature": ["function(s) s['settings.unit_temperature_num'] = (s['settings.unit_temperature_num']+1)%3; s['settings.unit_temperature'] = screenManager.getUnit(s, 'temperature', s['settings.unit_temperature_num']) end", "s.settings_unit_temperature = 'VALUE{settings.unit_temperature}'", "units"],
+    "settings_general.settings_unit_change_weight": ["function(s) s['settings.unit_weight_num'] = (s['settings.unit_weight_num']+1)%2; s['settings.unit_weight'] = screenManager.getUnit(s, 'weight', s['settings.unit_weight_num']) end", "s.settings_unit_weight = 'VALUE{settings.unit_weight}'", "units"],
+    "settings_general.settings_unit_change_volume": ["function(s) s['settings.unit_volume_num'] = (s['settings.unit_volume_num']+1)%2; s['settings.unit_volume'] = screenManager.getUnit(s, 'volume', s['settings.unit_volume_num']) end", "s.settings_unit_volume = 'VALUE{settings.unit_volume}'", "units"],
+    "settings_general.settings_unit_change_economy": ["function(s) s['settings.unit_economy_num'] = (s['settings.unit_economy_num']+1)%2; s['settings.unit_economy'] = screenManager.getUnit(s, 'economy', s['settings.unit_economy_num']) end", "s.settings_unit_economy = 'VALUE{settings.unit_economy}'", "units"],
+    "settings_general.settings_unit_change_power": ["function(s) s['settings.unit_power_num'] = (s['settings.unit_power_num']+1)%3; s['settings.unit_power'] = screenManager.getUnit(s, 'power', s['settings.unit_power_num']) end", "s.settings_unit_power = 'VALUE{settings.unit_power}'", "units"],
+    "settings_general.settings_unit_change_torque": ["function(s) s['settings.unit_torque_num'] = (s['settings.unit_torque_num']+1)%2; s['settings.unit_torque'] = screenManager.getUnit(s, 'torque', s['settings.unit_torque_num']) end", "s.settings_unit_torque = 'VALUE{settings.unit_torque}'", "units"],
+    "settings_general.settings_unit_change_energy": ["function(s) s['settings.unit_energy_num'] = (s['settings.unit_energy_num']+1)%2; s['settings.unit_energy'] = screenManager.getUnit(s, 'energy', s['settings.unit_energy_num']) end", "s.settings_unit_energy = 'VALUE{settings.unit_energy}'", "units"],
+    "settings_general.settings_unit_change_pressure": ["function(s) s['settings.unit_pressure_num'] = (s['settings.unit_pressure_num']+1)%4; s['settings.unit_pressure'] = screenManager.getUnit(s, 'pressure', s['settings.unit_pressure_num']) end", "s.settings_unit_pressure = 'VALUE{settings.unit_pressure}'", "units"],
+    "settings_general.settings_unit_change_dateformat": ["function(s) s['settings.unit_dateformat_num'] = (s['settings.unit_dateformat_num']+1)%3; s['settings.unit_dateformat'] = screenManager.getUnit(s, 'dateformat', s['settings.unit_dateformat_num']) end", "s.settings_unit_dateformat = 'VALUE{settings.unit_dateformat}'", "units"],
+    "settings_general.settings_unit_change_reset": ["function(s) screenManager.unitsReset(s) end", "s.settings_unit_length = 'VALUE{settings.unit_length}'; s.settings_unit_temperature = 'VALUE{settings.unit_temperature}'; s.settings_unit_weight = 'VALUE{settings.unit_weight}'; s.settings_unit_volume = 'VALUE{settings.unit_volume}'; s.settings_unit_economy = 'VALUE{settings.unit_economy}'; s.settings_unit_power = 'VALUE{settings.unit_power}'; s.settings_unit_torque = 'VALUE{settings.unit_torque}'; s.settings_unit_energy = 'VALUE{settings.unit_energy}'; s.settings_unit_pressure = 'VALUE{settings.unit_pressure}'; s.settings_unit_dateformat = 'VALUE{settings.unit_dateformat}';", "units"],
+
+    // SETTINGS GENERAL CONNECTIVITY
+    "settings_general.settings_refresh_contacts": ["function(s) end", "s.settings_refresh_contacts = true", "settings_refresh_contacts"],
+    "settings_general.settings_mute_nav": ["function(s) s['settings.mute_nav'] = not s['settings.mute_nav'] end", "s.settings_mute_nav = VALUE{settings.mute_nav}", "settings_mute_nav"],
+    "settings_general.settings_cycle_contact_list": ["function(s) s['settings.contact_sort'] = (s['settings.contact_sort']+1)%3 end", "s.settings_contact_sort = VALUE{settings.contact_sort}", "settings_contact_sort"],
+    "settings_general.settings_bluetooth": ["function(s) s['settings.bluetooth'] = not s['settings.bluetooth'] end", "s.settings_bluetooth = VALUE{settings.bluetooth}", "settings_bluetooth"],
+
+    // SETTINGS GENERAL RESET
+    "settings_general.settings_general_reset_prompt_yes_odometer": ["function(s) ccfOdometer.startingDistance = 0; ccfOdometer.distance = 0 end"],
+    "settings_general.settings_general_reset_prompt_yes_trip": ["function(s) ccfOdometer.distance = 0 end"],
+    "settings_general.settings_general_reset_prompt_yes_system": ["function(s) screenManager.loadSave(true); end"],
+    "settings_general.settings_general_reset_prompt_yes_audio": [
+    "function(s) s['settings.audio_ringtone_active'] = true; s['settings.audio_rear_sensors_active'] = true; s['settings.audio_front_sensors_active'] = true; s['settings.audio_notifications_active'] = true; s['settings.audio_speed_warning_active'] = false; s['settings.audio_rear_sensors_volume'] = 1; s['settings.audio_front_sensors_volume'] = 1; s['settings.audio_notifications_volume'] = 2; s['settings.audio_speed_warning_volume'] = 0.9; controller.getControllerSafe('parkingSensors').setRearSoundActive(s['settings.audio_rear_sensors_active']); controller.getControllerSafe('parkingSensors').setFrontSoundActive(s['settings.audio_front_sensors_active']); controller.getControllerSafe('gauges/customModules/ccfMessageBox').setSoundActive(s['settings.audio_notifications_active']); controller.getControllerSafe('gauges/customModules/speedLimit').setSoundActive(s['settings.audio_speed_warning_active']); controller.getControllerSafe('parkingSensors').setRearSoundVolume(s['settings.audio_rear_sensors_volume']); controller.getControllerSafe('parkingSensors').setFrontSoundVolume(s['settings.audio_front_sensors_volume']); controller.getControllerSafe('gauges/customModules/ccfMessageBox').setSoundVolume(s['settings.audio_notifications_volume']); controller.getControllerSafe('gauges/customModules/speedLimit').setSoundVolume(s['settings.audio_speed_warning_volume']) end",
+    "s.settings_ringtone_active = VALUE{settings.audio_ringtone_active}; s.settings_rear_sensors_audio_active = VALUE{settings.audio_rear_sensors_active}; s.settings_front_sensors_audio_active = VALUE{settings.audio_front_sensors_active}; s.settings_notifications_active = VALUE{settings.audio_notifications_active}; s.settings_speed_warning_active = VALUE{settings.audio_speed_warning_active}; s.settings_rear_sensors_volume = VALUE{settings.audio_rear_sensors_volume}; s.settings_front_sensors_volume = VALUE{settings.audio_front_sensors_volume}; s.settings_notifications_volume = VALUE{settings.audio_notifications_volume}; s.settings_speed_warning_volume = VALUE{settings.audio_speed_warning_volume};", "settings_audio"],
+
+    // SETTINGS GAUGES RIGHT
+    "settings_gauges.set_right_nav": ["function(s) s['settings.gauges_right'] = 'navi'; screenManager.runCustomJS('setRightScreen', 'navi') end"],
+    "settings_gauges.set_right_blank": ["function(s) s['settings.gauges_right'] = 'blank'; screenManager.runCustomJS('setRightScreen', 'blank') end"],
+
+    // SETTINGS GAUGES LEFT
+    "settings_gauges.set_left_mode": ["function(s) s['settings.gauges_left'] = 'mode'; screenManager.runCustomJS('setLeftScreen', 'mode') end"],
+    "settings_gauges.set_left_gmeter": ["function(s) s['settings.gauges_left'] = 'gmeter'; screenManager.runCustomJS('setLeftScreen', 'gmeter') end"],
+    "settings_gauges.set_left_blank": ["function(s) s['settings.gauges_left'] = 'blank'; screenManager.runCustomJS('setLeftScreen', 'blank') end"],
+
+    // SETTINGS GAUGES GENERAL
+    "settings_gauges.left_economy_dropdown_1.dropdown_slot_1": ["function(ts) ts['settings.gauges_left_economy_slot1'] = 'avg_consumption_reset' end", "s.settings_gauges_left_economy_slot1 = 'VALUE{settings.gauges_left_economy_slot1}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_1.dropdown_slot_2": ["function(ts) ts['settings.gauges_left_economy_slot1'] = 'avg_consumption_refuel' end", "s.settings_gauges_left_economy_slot1 = 'VALUE{settings.gauges_left_economy_slot1}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_1.dropdown_slot_3": ["function(ts) ts['settings.gauges_left_economy_slot1'] = 'trip_elapsed' end", "s.settings_gauges_left_economy_slot1 = 'VALUE{settings.gauges_left_economy_slot1}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_1.dropdown_slot_4": ["function(ts) ts['settings.gauges_left_economy_slot1'] = 'cruise_range' end", "s.settings_gauges_left_economy_slot1 = 'VALUE{settings.gauges_left_economy_slot1}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_1.dropdown_slot_5": ["function(ts) ts['settings.gauges_left_economy_slot1'] = 'instant_consumption' end", "s.settings_gauges_left_economy_slot1 = 'VALUE{settings.gauges_left_economy_slot1}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_1.dropdown_slot_6": ["function(ts) ts['settings.gauges_left_economy_slot1'] = 'avg_speed' end", "s.settings_gauges_left_economy_slot1 = 'VALUE{settings.gauges_left_economy_slot1}'", "settings_gauges_left_economy"],
+
+    "settings_gauges.left_economy_dropdown_2.dropdown_slot_1": ["function(ts) ts['settings.gauges_left_economy_slot2'] = 'avg_consumption_reset' end", "s.settings_gauges_left_economy_slot2 = 'VALUE{settings.gauges_left_economy_slot2}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_2.dropdown_slot_2": ["function(ts) ts['settings.gauges_left_economy_slot2'] = 'avg_consumption_refuel' end", "s.settings_gauges_left_economy_slot2 = 'VALUE{settings.gauges_left_economy_slot2}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_2.dropdown_slot_3": ["function(ts) ts['settings.gauges_left_economy_slot2'] = 'trip_elapsed' end", "s.settings_gauges_left_economy_slot2 = 'VALUE{settings.gauges_left_economy_slot2}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_2.dropdown_slot_4": ["function(ts) ts['settings.gauges_left_economy_slot2'] = 'cruise_range' end", "s.settings_gauges_left_economy_slot2 = 'VALUE{settings.gauges_left_economy_slot2}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_2.dropdown_slot_5": ["function(ts) ts['settings.gauges_left_economy_slot2'] = 'instant_consumption' end", "s.settings_gauges_left_economy_slot2 = 'VALUE{settings.gauges_left_economy_slot2}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_2.dropdown_slot_6": ["function(ts) ts['settings.gauges_left_economy_slot2'] = 'avg_speed' end", "s.settings_gauges_left_economy_slot2 = 'VALUE{settings.gauges_left_economy_slot2}'", "settings_gauges_left_economy"],
+
+    "settings_gauges.left_economy_dropdown_3.dropdown_slot_1": ["function(ts) ts['settings.gauges_left_economy_slot3'] = 'avg_consumption_reset' end", "s.settings_gauges_left_economy_slot3 = 'VALUE{settings.gauges_left_economy_slot3}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_3.dropdown_slot_2": ["function(ts) ts['settings.gauges_left_economy_slot3'] = 'avg_consumption_refuel' end", "s.settings_gauges_left_economy_slot3 = 'VALUE{settings.gauges_left_economy_slot3}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_3.dropdown_slot_3": ["function(ts) ts['settings.gauges_left_economy_slot3'] = 'trip_elapsed' end", "s.settings_gauges_left_economy_slot3 = 'VALUE{settings.gauges_left_economy_slot3}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_3.dropdown_slot_4": ["function(ts) ts['settings.gauges_left_economy_slot3'] = 'cruise_range' end", "s.settings_gauges_left_economy_slot3 = 'VALUE{settings.gauges_left_economy_slot3}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_3.dropdown_slot_5": ["function(ts) ts['settings.gauges_left_economy_slot3'] = 'instant_consumption' end", "s.settings_gauges_left_economy_slot3 = 'VALUE{settings.gauges_left_economy_slot3}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_3.dropdown_slot_6": ["function(ts) ts['settings.gauges_left_economy_slot3'] = 'avg_speed' end", "s.settings_gauges_left_economy_slot3 = 'VALUE{settings.gauges_left_economy_slot3}'", "settings_gauges_left_economy"],
+
+    "settings_gauges.left_economy_dropdown_4.dropdown_slot_1": ["function(ts) ts['settings.gauges_left_economy_slot4'] = 'avg_consumption_reset' end", "s.settings_gauges_left_economy_slot4 = 'VALUE{settings.gauges_left_economy_slot4}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_4.dropdown_slot_2": ["function(ts) ts['settings.gauges_left_economy_slot4'] = 'avg_consumption_refuel' end", "s.settings_gauges_left_economy_slot4 = 'VALUE{settings.gauges_left_economy_slot4}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_4.dropdown_slot_3": ["function(ts) ts['settings.gauges_left_economy_slot4'] = 'trip_elapsed' end", "s.settings_gauges_left_economy_slot4 = 'VALUE{settings.gauges_left_economy_slot4}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_4.dropdown_slot_4": ["function(ts) ts['settings.gauges_left_economy_slot4'] = 'cruise_range' end", "s.settings_gauges_left_economy_slot4 = 'VALUE{settings.gauges_left_economy_slot4}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_4.dropdown_slot_5": ["function(ts) ts['settings.gauges_left_economy_slot4'] = 'instant_consumption' end", "s.settings_gauges_left_economy_slot4 = 'VALUE{settings.gauges_left_economy_slot4}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_dropdown_4.dropdown_slot_6": ["function(ts) ts['settings.gauges_left_economy_slot4'] = 'avg_speed' end", "s.settings_gauges_left_economy_slot4 = 'VALUE{settings.gauges_left_economy_slot4}'", "settings_gauges_left_economy"],
+
+    "settings_gauges.left_economy_apply": ["function(s) s['settings.gauges_left_economy_slot1'] = screenManager.getSetting('settings.gauges_left_economy_slot1'); s['settings.gauges_left_economy_slot2'] = screenManager.getSetting('settings.gauges_left_economy_slot2'); s['settings.gauges_left_economy_slot3'] = screenManager.getSetting('settings.gauges_left_economy_slot3'); s['settings.gauges_left_economy_slot4'] = screenManager.getSetting('settings.gauges_left_economy_slot4'); screenManager.runCustomJS('setLeftEconomyScreen', {s['settings.gauges_left_economy_slot1'],  s['settings.gauges_left_economy_slot2'], s['settings.gauges_left_economy_slot3'], s['settings.gauges_left_economy_slot4']}); end",
+    "s.settings_gauges_left_economy_slot1 = 'VALUE{settings.gauges_left_economy_slot1}'; s.settings_gauges_left_economy_slot2 = 'VALUE{settings.gauges_left_economy_slot2}'; s.settings_gauges_left_economy_slot3 = 'VALUE{settings.gauges_left_economy_slot3}'; s.settings_gauges_left_economy_slot4 = 'VALUE{settings.gauges_left_economy_slot4}'", "settings_gauges_left_economy"],
+    "settings_gauges.left_economy_reset": ["function(ts) ts['settings.gauges_left_economy_slot1'] = 'avg_consumption_reset'; ts['settings.gauges_left_economy_slot2'] = 'avg_consumption_refuel'; ts['settings.gauges_left_economy_slot3'] = 'trip_elapsed'; ts['settings.gauges_left_economy_slot4'] = 'cruise_range'; end",
+    "s.settings_gauges_left_economy_slot1 = 'VALUE{settings.gauges_left_economy_slot1}'; s.settings_gauges_left_economy_slot2 = 'VALUE{settings.gauges_left_economy_slot2}'; s.settings_gauges_left_economy_slot3 = 'VALUE{settings.gauges_left_economy_slot3}'; s.settings_gauges_left_economy_slot4 = 'VALUE{settings.gauges_left_economy_slot4}'", "settings_gauges_left_economy"],
+
+    // SETTINGS GENERAL SYSTEM
+    "settings_general.settings_check_update": ["function(s) screenManager.checkForUpdate(); end"],
+
+    // SETTINGS AUDIO
+    "settings_audio.rear_sensors_decrease": ["function(s) s['settings.audio_rear_sensors_volume'] = math.max(s['settings.audio_rear_sensors_volume']-0.1, 0.1); controller.getControllerSafe('parkingSensors').setRearSoundVolume(s['settings.audio_rear_sensors_volume']); screenManager.previewSound(4, s['settings.audio_rear_sensors_volume']); end", "s.settings_rear_sensors_volume =  VALUE{settings.audio_rear_sensors_volume}", "settings_audio"],
+    "settings_audio.front_sensors_decrease": ["function(s) s['settings.audio_front_sensors_volume'] = math.max(s['settings.audio_front_sensors_volume']-0.1, 0.1); controller.getControllerSafe('parkingSensors').setFrontSoundVolume(s['settings.audio_front_sensors_volume']); screenManager.previewSound(4, s['settings.audio_front_sensors_volume']); end", "s.settings_front_sensors_volume = VALUE{settings.audio_front_sensors_volume}", "settings_audio"],
+    "settings_audio.notifications_decrease": ["function(s) s['settings.audio_notifications_volume'] = math.max(s['settings.audio_notifications_volume']-0.1, 0.1); controller.getControllerSafe('gauges/customModules/ccfMessageBox').setSoundVolume(s['settings.audio_notifications_volume']); screenManager.previewSound(3, s['settings.audio_notifications_volume']); end", "s.settings_notifications_volume = VALUE{settings.audio_notifications_volume}", "settings_audio"],
+    "settings_audio.speed_warning_decrease": ["function(s) s['settings.audio_speed_warning_volume'] = math.max(s['settings.audio_speed_warning_volume']-0.1, 0.1); controller.getControllerSafe('gauges/customModules/speedLimit').setSoundVolume(s['settings.audio_speed_warning_volume']); screenManager.previewSound(2, s['settings.audio_speed_warning_volume']); end", "s.settings_speed_warning_volume = VALUE{settings.audio_speed_warning_volume}", "settings_audio"],
+
+    "settings_audio.rear_sensors_increase": ["function(s) s['settings.audio_rear_sensors_volume'] = math.min(s['settings.audio_rear_sensors_volume']+0.1, 3); controller.getControllerSafe('parkingSensors').setRearSoundVolume(s['settings.audio_rear_sensors_volume']); screenManager.previewSound(4, s['settings.audio_rear_sensors_volume']); end", "s.settings_rear_sensors_volume = VALUE{settings.audio_rear_sensors_volume}", "settings_audio"],
+    "settings_audio.front_sensors_increase": ["function(s) s['settings.audio_front_sensors_volume'] = math.min(s['settings.audio_front_sensors_volume']+0.1, 3); controller.getControllerSafe('parkingSensors').setFrontSoundVolume(s['settings.audio_front_sensors_volume']); screenManager.previewSound(4, s['settings.audio_front_sensors_volume']); end", "s.settings_front_sensors_volume = VALUE{settings.audio_front_sensors_volume}", "settings_audio"],
+    "settings_audio.notifications_increase": ["function(s) s['settings.audio_notifications_volume'] = math.min(s['settings.audio_notifications_volume']+0.1, 3); controller.getControllerSafe('gauges/customModules/ccfMessageBox').setSoundVolume(s['settings.audio_notifications_volume']); screenManager.previewSound(3, s['settings.audio_notifications_volume']); end", "s.settings_notifications_volume = VALUE{settings.audio_notifications_volume}", "settings_audio"],
+    "settings_audio.speed_warning_increase": ["function(s) s['settings.audio_speed_warning_volume'] = math.min(s['settings.audio_speed_warning_volume']+0.1, 3); controller.getControllerSafe('gauges/customModules/speedLimit').setSoundVolume(s['settings.audio_speed_warning_volume']); screenManager.previewSound(2, s['settings.audio_speed_warning_volume']); end", "s.settings_speed_warning_volume = VALUE{settings.audio_speed_warning_volume}", "settings_audio"],
+
+    "settings_audio.ringtone_toggle": ["function(s) s['settings.audio_ringtone_active'] = not s['settings.audio_ringtone_active'] end", "s.settings_ringtone_active = VALUE{settings.audio_ringtone_active}", "settings_audio"],
+    "settings_audio.rear_sensors_toggle": ["function(s) s['settings.audio_rear_sensors_active'] = not s['settings.audio_rear_sensors_active']; controller.getControllerSafe('parkingSensors').setRearSoundActive(s['settings.audio_rear_sensors_active']) end", "s.settings_rear_sensors_audio_active = VALUE{settings.audio_rear_sensors_active}", "settings_audio"],
+    "settings_audio.front_sensors_toggle": ["function(s) s['settings.audio_front_sensors_active'] = not s['settings.audio_front_sensors_active']; controller.getControllerSafe('parkingSensors').setFrontSoundActive(s['settings.audio_front_sensors_active']) end", "s.settings_front_sensors_audio_active = VALUE{settings.audio_front_sensors_active}", "settings_audio"],
+    "settings_audio.notifications_toggle": ["function(s) s['settings.audio_notifications_active'] = not s['settings.audio_notifications_active']; controller.getControllerSafe('gauges/customModules/ccfMessageBox').setSoundActive(s['settings.audio_notifications_active']) end", "s.settings_notifications_active = VALUE{settings.audio_notifications_active}", "settings_audio"],
+    "settings_audio.speed_warning_toggle": ["function(s) s['settings.audio_speed_warning_active'] = not s['settings.audio_speed_warning_active']; controller.getControllerSafe('gauges/customModules/speedLimit').setSoundActive(s['settings.audio_speed_warning_active']) end", "s.settings_speed_warning_active = VALUE{settings.audio_speed_warning_active}", "settings_audio"],
+
+    // SETTINGS VEHICLE LIGHTS
+    "settings_vehicle.lights_highbeam_dropdown_1": ["function(s) s['settings.vehicle_highbeam_timer'] = 2; controller.getControllerSafe('autoHeadlights').setHighbeamDelayTimer(2) end", "s.settings_vehicle_highbeam_timer = VALUE{settings.vehicle_highbeam_timer}", "settings_vehicle_light"],
+    "settings_vehicle.lights_highbeam_dropdown_2": ["function(s) s['settings.vehicle_highbeam_timer'] = 5; controller.getControllerSafe('autoHeadlights').setHighbeamDelayTimer(5) end", "s.settings_vehicle_highbeam_timer = VALUE{settings.vehicle_highbeam_timer}", "settings_vehicle_light"],
+    "settings_vehicle.lights_highbeam_dropdown_3": ["function(s) s['settings.vehicle_highbeam_timer'] = 10; controller.getControllerSafe('autoHeadlights').setHighbeamDelayTimer(10) end", "s.settings_vehicle_highbeam_timer = VALUE{settings.vehicle_highbeam_timer}", "settings_vehicle_light"],
+
+    "settings_vehicle.lights_entry_exit_dropdown_1": ["function(s) s['settings.vehicle_lights_entry_exit_timer'] = 10; electrics.values.ceilingLightTimer = 10 end", "s.settings_vehicle_lights_entry_exit_timer = VALUE{settings.vehicle_lights_entry_exit_timer}", "settings_vehicle_light"],
+    "settings_vehicle.lights_entry_exit_dropdown_2": ["function(s) s['settings.vehicle_lights_entry_exit_timer'] = 15; electrics.values.ceilingLightTimer = 15 end", "s.settings_vehicle_lights_entry_exit_timer = VALUE{settings.vehicle_lights_entry_exit_timer}", "settings_vehicle_light"],
+    "settings_vehicle.lights_entry_exit_dropdown_3": ["function(s) s['settings.vehicle_lights_entry_exit_timer'] = 20; electrics.values.ceilingLightTimer = 20 end", "s.settings_vehicle_lights_entry_exit_timer = VALUE{settings.vehicle_lights_entry_exit_timer}", "settings_vehicle_light"],
+    "settings_vehicle.lights_entry_exit_dropdown_4": ["function(s) s['settings.vehicle_lights_entry_exit_timer'] = 25; electrics.values.ceilingLightTimer = 25 end", "s.settings_vehicle_lights_entry_exit_timer = VALUE{settings.vehicle_lights_entry_exit_timer}", "settings_vehicle_light"],
+    "settings_vehicle.lights_entry_exit_dropdown_5": ["function(s) s['settings.vehicle_lights_entry_exit_timer'] = 30; electrics.values.ceilingLightTimer = 30 end", "s.settings_vehicle_lights_entry_exit_timer = VALUE{settings.vehicle_lights_entry_exit_timer}", "settings_vehicle_light"],
+
+    "settings_vehicle.lights_mode_dropdown_1": ["function(s) s['settings.vehicle_lights_mode'] = 1; controller.getControllerSafe('autoHeadlights').setComponentActive(s['settings.vehicle_lights_mode'] > 0, s['settings.vehicle_lights_mode'] == 1) end", "s.settings_vehicle_headlight_mode = VALUE{settings.vehicle_lights_mode}", "settings_vehicle_light"],
+    "settings_vehicle.lights_mode_dropdown_2": ["function(s) s['settings.vehicle_lights_mode'] = 2; controller.getControllerSafe('autoHeadlights').setComponentActive(s['settings.vehicle_lights_mode'] > 0, s['settings.vehicle_lights_mode'] == 1) end", "s.settings_vehicle_headlight_mode = VALUE{settings.vehicle_lights_mode}", "settings_vehicle_light"],
+    "settings_vehicle.lights_mode_dropdown_3": ["function(s) s['settings.vehicle_lights_mode'] = 0; controller.getControllerSafe('autoHeadlights').setComponentActive(s['settings.vehicle_lights_mode'] > 0, s['settings.vehicle_lights_mode'] == 1) end", "s.settings_vehicle_headlight_mode = VALUE{settings.vehicle_lights_mode}", "settings_vehicle_light"],
+
+    "settings_vehicle.lights_entry_exit": ["function(s) s['settings.vehicle_lights_entry_exit'] = not s['settings.vehicle_lights_entry_exit']; electrics.values.ceilingLightActive = s['settings.vehicle_lights_entry_exit'] end", "s.settings_vehicle_lights_entry_exit =  VALUE{settings.vehicle_lights_entry_exit}", "settings_vehicle_light"],
+
+    // SETTINGS VEHICLE PKSA
+    "settings_vehicle.rear_sensors_toggle": ["function(s) s['settings.vehicle_rear_sensors_active'] = not s['settings.vehicle_rear_sensors_active']; controller.getControllerSafe('parkingSensors').setRearActive(s['settings.vehicle_rear_sensors_active']) end", "s.settings_rear_sensors_active = VALUE{settings.vehicle_rear_sensors_active}", "settings_vehicle_pksa"],
+    "settings_vehicle.front_sensors_toggle": ["function(s) s['settings.vehicle_front_sensors_active'] = not s['settings.vehicle_front_sensors_active']; controller.getControllerSafe('parkingSensors').setFrontActive(s['settings.vehicle_front_sensors_active']) end", "s.settings_front_sensors_active = VALUE{settings.vehicle_front_sensors_active}", "settings_vehicle_pksa"],
+
+    // SETTINGS VEHICLE AEB
+    "settings_vehicle.aeb_global_toggle": ["function(s) s['settings.vehicle_aeb_enabled'] = not s['settings.vehicle_aeb_enabled']; controller.getControllerSafe('aeb').setGlobalActive(s['settings.vehicle_aeb_enabled']) end", "s.settings_aeb_active = VALUE{settings.vehicle_aeb_enabled}", "settings_vehicle_aeb"],
+    "settings_vehicle.aeb_drivemode_toggle": ["function(s) local a = controller.getController('driveModes'); if not a then return end; s['settings.vehicle_aeb_mode_enabled'] = not s['settings.vehicle_aeb_mode_enabled']; local b = a.getCurrentDriveModeKey(); local c = a.getDriveModeData(b); if c and s['settings.vehicle_aeb_modes_orig'][b] == nil then s['settings.vehicle_aeb_modes_orig'][b] = c.settings.aeb.isEnabled; c.settings.aeb.isEnabled = s['settings.vehicle_aeb_mode_enabled']; s['settings.vehicle_aeb_modes'][b] = s['settings.vehicle_aeb_mode_enabled']; a.setDriveMode(b) end end", "s.settings_aeb_active_mode = VALUE{settings.vehicle_aeb_mode_enabled}", "settings_vehicle_aeb"],
+    "settings_vehicle.aeb_reset": ["function(s) s['settings.vehicle_aeb_modes'] = {}; local a = controller.getController('driveModes'); if not a then return end; for k,v in pairs(s['settings.vehicle_aeb_modes_orig']) do local b = a.getDriveModeData(k); if b then b.settings.aeb.isEnabled = v end; if k == a.getCurrentDriveModeKey() then s['settings.vehicle_aeb_mode_enabled'] = v; a.setDriveMode(b); end; end; s['settings.vehicle_aeb_modes_orig'] = {}; end", "s.settings_aeb_active_mode = VALUE{settings.vehicle_aeb_mode_enabled}", "settings_vehicle_aeb"],
+
+    // SETTINGS VEHICLE HILL
+    "settings_vehicle.hill_start_toggle": ["function(s) s['settings.vehicle_hill_start_enabled'] = not s['settings.vehicle_hill_start_enabled']; controller.getControllerSafe('hillStartAssist').setGlobalActive(s['settings.vehicle_hill_start_enabled']) end", "s.settings_hill_start_active = VALUE{settings.vehicle_hill_start_enabled}", "settings_vehicle_hill"],
+    "settings_vehicle.hill_start_mode_toggle": ["function(s) local a = controller.getController('driveModes'); if not a then return end; s['settings.vehicle_hill_start_mode_enabled'] = not s['settings.vehicle_hill_start_mode_enabled']; local b = a.getCurrentDriveModeKey(); local c = a.getDriveModeData(b); if c then c.settings.hillStartAssist.isEnabled = s['settings.vehicle_hill_start_mode_enabled']; s['settings.vehicle_hill_start_modes'][b] = s['settings.vehicle_hill_start_mode_enabled']; a.setDriveMode(b) end end", "s.settings_hill_start_active_mode = VALUE{settings.vehicle_hill_start_mode_enabled}", "settings_vehicle_hill"],
+
+    "settings_vehicle.hill_descent_toggle": ["function(s) s['settings.vehicle_hill_descent_enabled'] = not s['settings.vehicle_hill_descent_enabled']; controller.getControllerSafe('hillDescentAssist').setGlobalActive(s['settings.vehicle_hill_descent_enabled']) end", "s.settings_hill_descent_active = VALUE{settings.vehicle_hill_descent_enabled}", "settings_vehicle_hill"],
+    "settings_vehicle.hill_descent_mode_toggle": ["function(s) local a = controller.getController('driveModes'); if not a then return end; s['settings.vehicle_hill_descent_mode_enabled'] = not s['settings.vehicle_hill_descent_mode_enabled']; local b = a.getCurrentDriveModeKey(); local c = a.getDriveModeData(b); if c then c.settings.hillDescentAssist.isEnabled = s['settings.vehicle_hill_descent_mode_enabled']; s['settings.vehicle_hill_descent_modes'][b] = s['settings.vehicle_hill_descent_mode_enabled']; a.setDriveMode(b) end end", "s.settings_hill_descent_active_mode = VALUE{settings.vehicle_hill_descent_mode_enabled}", "settings_vehicle_hill"],
+
+    // SETTINGS VEHICLE ASS
+    "settings_vehicle.ass_toggle": ["function(s) s['settings.vehicle_start_stop_active'] = not s['settings.vehicle_start_stop_active']; controller.getControllerSafe('startStopAutomatic').setGlobalActive(s['settings.vehicle_start_stop_active']) end", "s.settings_start_stop_active = VALUE{settings.vehicle_start_stop_active}", "settings_vehicle_ass"],
+
+    // SETTINGS VEHICLE AMBIENCE
+    "ambience.ambient_color": ["function(s, xleft, xright) local h = (xright/(xleft+xright)-0.1); s['settings.ambient_color'] = h; obj:queueGameEngineLua([[ zeit_ccfInteriorAmbience.setH(]]..objectId..[[, ]]..h..[[); zeit_ccfInteriorAmbience.updateColor(]]..objectId..[[) ]]) end", "s.ambient_color = VALUE{settings.ambient_color}", "ambient"],
+    "ambience.ambient_brightness": ["function(s, xleft, xright) local v = xright/(xleft+xright); s['settings.ambient_brightness'] = v; obj:queueGameEngineLua([[ zeit_ccfInteriorAmbience.setV(]]..objectId..[[, ]]..v..[[); zeit_ccfInteriorAmbience.updateColor(]]..objectId..[[) ]]) end", "s.ambient_brightness = VALUE{settings.ambient_brightness}", "ambient"],
+    "ambience.reset": ["function(s) s['settings.ambient_color'] = s['settings.ambient_color_original']; s['settings.ambient_brightness'] = s['settings.ambient_brightness_original']; obj:queueGameEngineLua([[ zeit_ccfInteriorAmbience.setH(]]..objectId..[[, ]]..s['settings.ambient_color']..[[); zeit_ccfInteriorAmbience.setV(]]..objectId..[[, ]]..s['settings.ambient_brightness']..[[); zeit_ccfInteriorAmbience.updateColor(]]..objectId..[[) ]]) end", "s.ambient_color = VALUE{settings.ambient_color}; s.ambient_brightness = VALUE{settings.ambient_brightness}", "ambient"],
+    "ambience.disable": ["function(s) s['settings.ambient_enabled'] = not s['settings.ambient_enabled']; obj:queueGameEngineLua([[ zeit_ccfInteriorAmbience.setOn(]]..objectId..[[,]]..tostring(s['settings.ambient_enabled'])..[[); zeit_ccfInteriorAmbience.updateColor(]]..objectId..[[) ]]) end", "s.ambient_enabled = VALUE{settings.ambient_enabled}", "ambient"],
+
+    // HOME
+    "home.scroll": ["function(ts, xleft, xright) ts['home.scroll'] = (xleft/(xleft+xright))*2; end"]
+}

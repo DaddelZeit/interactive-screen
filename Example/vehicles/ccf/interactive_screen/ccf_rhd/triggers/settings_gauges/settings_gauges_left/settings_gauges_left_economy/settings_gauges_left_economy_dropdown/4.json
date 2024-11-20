@@ -1,0 +1,49 @@
+[
+    {
+        "pos": [ 0.41,0.155,0.661 ],
+        "size": [ 0.09, 0.005, 0.016 ],
+        "id": "settings_gauges_left"
+    },
+    {
+        "pos": [ 0.41,0.155,0.639 ],
+        "size": [ 0.09, 0.005, 0.016 ],
+        "id": "settings_gauges_right"
+    },
+
+    {
+        "pos": [ 0.529,0.147,0.659 ],
+        "size": [ 0.075, 0.005, 0.008 ],
+        "id": "settings_gauges.left_economy_dropdown_4.dropdown_slot_1"
+    },
+    {
+        "pos": [ 0.529,0.147,0.651 ],
+        "size": [ 0.075, 0.005, 0.008 ],
+        "id": "settings_gauges.left_economy_dropdown_4.dropdown_slot_2"
+    },
+    {
+        "pos": [ 0.529,0.147,0.643 ],
+        "size": [ 0.075, 0.005, 0.008 ],
+        "id": "settings_gauges.left_economy_dropdown_4.dropdown_slot_3"
+    },
+    {
+        "pos": [ 0.529,0.147,0.635 ],
+        "size": [ 0.075, 0.005, 0.008 ],
+        "id": "settings_gauges.left_economy_dropdown_4.dropdown_slot_4"
+    },
+    {
+        "pos": [ 0.529,0.147,0.627 ],
+        "size": [ 0.075, 0.005, 0.008 ],
+        "id": "settings_gauges.left_economy_dropdown_4.dropdown_slot_5"
+    },
+    {
+        "pos": [ 0.529,0.147,0.619 ],
+        "size": [ 0.075, 0.005, 0.008 ],
+        "id": "settings_gauges.left_economy_dropdown_4.dropdown_slot_6"
+    },
+
+    {
+        "pos": [ 0.529,0.147,0.639 ],
+        "size": [ 0.075, 0.005, 0.048 ],
+        "id": "settings_gauges_left_economy"
+    }
+]

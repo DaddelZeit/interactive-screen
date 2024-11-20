@@ -1,0 +1,72 @@
+{
+    "firststart": [2, "function(s) screenManager.showFirstStartBox(s['firststart']) end"],
+
+    "navi.3d/2d": [1, "s.mapState[0] = VALUE"],
+    "navi.north_lock": [1, "s.mapState[1] = VALUE"],
+    "navi.current_destination": [1, "s.navi_current_destination = 'VALUE{navi.current_destination}'"],
+
+    "audio.radioType": [2, "function(s) if not zeitRadio and s['audio.radioType'] == 2 then s['audio.radioType'] = 0 end; screenManager.updateRadioType(s['audio.radioType']) end"],
+    "settings.time_12h": [1, "s.settings_time_12h = VALUE"],
+    "settings.timezone": [1, "s.timezone = VALUE"],
+    "settings.car_name": [3, "function(s) screenManager.generateCarName(s); screenManager.sendMarketInfo() end", "s.bluetooth_vehname = 'VALUE{settings.car_name}'"],
+    "settings.time_manual_offset_h": [1, "s.time_manual_offset_h = VALUE"],
+    "settings.time_manual_offset_m": [1, "s.time_manual_offset_m = VALUE"],
+    "settings.mute_nav": [1, "s.settings_mute_nav = VALUE"],
+    "settings.contact_sort": [1, "s.settings_contact_sort = VALUE"],
+    "settings.bluetooth": [1, "s.settings_bluetooth = VALUE"],
+
+    "settings.gauges_right": [2, "function(s) screenManager.runCustomJS('setRightScreen', s['settings.gauges_right']) end"],
+    "settings.gauges_left_economy_slot1": [1, "s.settings_gauges_left_economy_slot1 = 'VALUE'"],
+    "settings.gauges_left_economy_slot2": [1, "s.settings_gauges_left_economy_slot2 = 'VALUE'"],
+    "settings.gauges_left_economy_slot3": [1, "s.settings_gauges_left_economy_slot3 = 'VALUE'"],
+    "settings.gauges_left_economy_slot4": [1, "s.settings_gauges_left_economy_slot4 = 'VALUE'"],
+    "settings.gauges_left": [2, "function(s) screenManager.runCustomJS('setLeftScreen', s['settings.gauges_left']); screenManager.runCustomJS('setLeftEconomyScreen', {s['settings.gauges_left_economy_slot1'],  s['settings.gauges_left_economy_slot2'], s['settings.gauges_left_economy_slot3'], s['settings.gauges_left_economy_slot4']}); end"],
+
+    "settings.unit_length_num": [3, "function(s) s['settings.unit_length'] = screenManager.getUnit(s, 'length', s['settings.unit_length_num']); end", "s.settings_unit_length = 'VALUE{settings.unit_length}'"],
+    "settings.unit_temperature_num": [3, "function(s) s['settings.unit_temperature'] = screenManager.getUnit(s, 'temperature', s['settings.unit_temperature_num']) end", "s.settings_unit_temperature = 'VALUE{settings.unit_temperature}'"],
+    "settings.unit_weight_num": [3, "function(s) s['settings.unit_weight'] = screenManager.getUnit(s, 'weight', s['settings.unit_weight_num']) end", "s.settings_unit_weight = 'VALUE{settings.unit_weight}'"],
+    "settings.unit_volume_num": [3, "function(s) s['settings.unit_volume'] = screenManager.getUnit(s, 'volume', s['settings.unit_volume_num']); end", "s.settings_unit_volume = 'VALUE{settings.unit_volume}'"],
+    "settings.unit_economy_num": [3, "function(s) s['settings.unit_economy'] = screenManager.getUnit(s, 'economy', s['settings.unit_economy_num']) end", "s.settings_unit_economy = 'VALUE{settings.unit_economy}'"],
+    "settings.unit_power_num": [3, "function(s) s['settings.unit_power'] = screenManager.getUnit(s, 'power', s['settings.unit_power_num']) end", "s.settings_unit_power = 'VALUE{settings.unit_power}'"],
+    "settings.unit_torque_num": [3, "function(s) s['settings.unit_torque'] = screenManager.getUnit(s, 'torque', s['settings.unit_torque_num']) end", "s.settings_unit_torque = 'VALUE{settings.unit_torque}'"],
+    "settings.unit_energy_num": [3, "function(s) s['settings.unit_energy'] = screenManager.getUnit(s, 'energy', s['settings.unit_energy_num']) end", "s.settings_unit_energy = 'VALUE{settings.unit_energy}'"],
+    "settings.unit_pressure_num": [3, "function(s) s['settings.unit_pressure'] = screenManager.getUnit(s, 'pressure', s['settings.unit_pressure_num']) end", "s.settings_unit_pressure = 'VALUE{settings.unit_pressure}'"],
+    "settings.unit_dateformat_num": [3, "function(s) s['settings.unit_dateformat'] = screenManager.getUnit(s, 'dateformat', s['settings.unit_dateformat_num']) end", "s.settings_unit_dateformat = 'VALUE{settings.unit_dateformat}'"],
+
+    "settings.audio_ringtone_active": [1, "s.settings_ringtone_active = VALUE"],
+    "settings.audio_rear_sensors_active": [3, "function(s) controller.getControllerSafe('parkingSensors').setRearSoundActive(s['settings.audio_rear_sensors_active']) end", "s.settings_rear_sensors_audio_active = VALUE{settings.audio_rear_sensors_active}"],
+    "settings.audio_front_sensors_active": [3, "function(s) controller.getControllerSafe('parkingSensors').setFrontSoundActive(s['settings.audio_front_sensors_active']) end", "s.settings_front_sensors_audio_active = VALUE{settings.audio_front_sensors_active}"],
+    "settings.audio_notifications_active": [3, "function(s) controller.getControllerSafe('gauges/customModules/ccfMessageBox').setSoundActive(s['settings.audio_notifications_active']) end", "s.settings_notifications_active = VALUE{settings.audio_notifications_active}"],
+    "settings.audio_speed_warning_active": [3, "function(s) controller.getControllerSafe('gauges/customModules/speedLimit').setSoundActive(s['settings.audio_speed_warning_active']) end", "s.settings_speed_warning_active = VALUE{settings.audio_speed_warning_active}"],
+
+    "settings.audio_rear_sensors_volume": [3, "function(s) controller.getControllerSafe('parkingSensors').setRearSoundVolume(s['settings.audio_rear_sensors_volume']) end", "s.settings_rear_sensors_volume = VALUE{settings.audio_rear_sensors_volume}"],
+    "settings.audio_front_sensors_volume": [3, "function(s) controller.getControllerSafe('parkingSensors').setFrontSoundVolume(s['settings.audio_front_sensors_volume']) end", "s.settings_front_sensors_volume = VALUE{settings.audio_front_sensors_volume}"],
+    "settings.audio_notifications_volume": [3, "function(s) controller.getControllerSafe('gauges/customModules/ccfMessageBox').setSoundVolume(s['settings.audio_notifications_volume']) end", "s.settings_notifications_volume = VALUE{settings.audio_notifications_volume}"],
+    "settings.audio_speed_warning_volume": [3, "function(s) controller.getControllerSafe('gauges/customModules/speedLimit').setSoundVolume(s['settings.audio_speed_warning_volume']) end", "s.settings_speed_warning_volume = VALUE{settings.audio_speed_warning_volume}"],
+
+    "settings.vehicle_highbeam_timer": [3, "function(s) controller.getControllerSafe('autoHeadlights').setHighbeamDelayTimer(s['settings.vehicle_highbeam_timer']) end", "s.settings_vehicle_highbeam_timer =  VALUE{settings.vehicle_highbeam_timer}"],
+    "settings.vehicle_lights_mode": [3, "function(s) controller.getControllerSafe('autoHeadlights').setComponentActive(s['settings.vehicle_lights_mode'] > 0, s['settings.vehicle_lights_mode'] == 1) end", "s.settings_vehicle_headlight_mode =  VALUE{settings.vehicle_lights_mode}"],
+    "settings.vehicle_lights_entry_exit": [3, "function(s) electrics.values.ceilingLightActive = s['settings.vehicle_lights_entry_exit'] end", "s.settings_vehicle_lights_entry_exit =  VALUE{settings.vehicle_lights_entry_exit}"],
+    "settings.vehicle_lights_entry_exit_timer": [3, "function(s) electrics.values.ceilingLightTimer = s['settings.vehicle_lights_entry_exit_timer'] end", "s.settings_vehicle_lights_entry_exit_timer =  VALUE{settings.vehicle_lights_entry_exit_timer}"],
+
+    "settings.vehicle_rear_sensors_active": [3, "function(s) controller.getControllerSafe('parkingSensors').setRearActive(s['settings.vehicle_rear_sensors_active']) end", "s.settings_rear_sensors_active = VALUE{settings.vehicle_rear_sensors_active}"],
+    "settings.vehicle_front_sensors_active": [3, "function(s) controller.getControllerSafe('parkingSensors').setFrontActive(s['settings.vehicle_front_sensors_active']) end", "s.settings_front_sensors_active = VALUE{settings.vehicle_front_sensors_active}"],
+
+    "settings.vehicle_aeb_enabled": [3, "function(s) controller.getControllerSafe('aeb').setGlobalActive(s['settings.vehicle_aeb_enabled']) end", "s.settings_aeb_active = VALUE{settings.vehicle_aeb_enabled}"],
+    "settings.vehicle_aeb_modes": [2, "function(s) local a = controller.getController('driveModes'); if not a then return end; for k,v in pairs(s['settings.vehicle_aeb_modes']) do local b = a.getDriveModeData(k) if b then b.settings.aeb.isEnabled = v end end end"],
+    "settings.vehicle_aeb_mode_enabled": [3, "function(s) local a = controller.getController('driveModes'); if not a then return end; local b = a.getDriveModeData(a.getCurrentDriveModeKey()); if b then s['settings.vehicle_aeb_mode_enabled'] = b.settings.aeb.isEnabled end end", "s.settings_aeb_active_mode = VALUE{settings.vehicle_aeb_mode_enabled}"],
+
+    "settings.vehicle_hill_start_enabled": [3, "function(s) controller.getControllerSafe('hillStartAssist').setGlobalActive(s['settings.vehicle_hill_start_enabled']) end", "s.settings_hill_start_active = VALUE{settings.vehicle_hill_start_enabled}"],
+    "settings.vehicle_hill_start_modes": [2, "function(s) local a = controller.getController('driveModes'); if not a then return end; for k,v in pairs(s['settings.vehicle_hill_start_modes']) do local b = a.getDriveModeData(k) if b then b.settings.hillStartAssist.isEnabled = v end end end"],
+    "settings.vehicle_hill_start_mode_enabled": [3, "function(s) local a = controller.getController('driveModes'); if not a then return end; local b = a.getDriveModeData(a.getCurrentDriveModeKey()); if b then s['settings.vehicle_hill_start_mode_enabled'] = b.settings.hillStartAssist.isEnabled end end", "s.settings_hill_start_active_mode = VALUE{settings.vehicle_hill_start_mode_enabled}"],
+
+    "settings.vehicle_hill_descent_enabled": [3, "function(s) controller.getControllerSafe('hillDescentAssist').setGlobalActive(s['settings.vehicle_hill_descent_enabled']) end", "s.settings_hill_descent_active = VALUE{settings.vehicle_hill_descent_enabled}"],
+    "settings.vehicle_hill_descent_modes": [2, "function(s) local a = controller.getController('driveModes'); if not a then return end; for k,v in pairs(s['settings.vehicle_hill_descent_modes']) do local b = a.getDriveModeData(k) if b then b.settings.hillDescentAssist.isEnabled = v end end end"],
+    "settings.vehicle_hill_descent_mode_enabled": [3, "function(s) local a = controller.getController('driveModes'); if not a then return end; local b = a.getDriveModeData(a.getCurrentDriveModeKey()); if b then s['settings.vehicle_hill_descent_mode_enabled'] = b.settings.hillDescentAssist.isEnabled end end", "s.settings_hill_descent_active_mode = VALUE{settings.vehicle_hill_descent_mode_enabled}"],
+
+    "settings.vehicle_start_stop_active": [3, "function(s) controller.getControllerSafe('startStopAutomatic').setGlobalActive(s['settings.vehicle_start_stop_active']) end", "s.settings_start_stop_active = VALUE{settings.vehicle_start_stop_active}"],
+
+    //"settings.ambient_color": [3, "function(s) end", "{}"],
+    //"settings.ambient_brightness": [1, "{}}"],
+    "settings.ambient_enabled": [3, "function(s) obj:queueGameEngineLua([[ extensions.load('zeit_ccfInteriorAmbience'); zeit_ccfInteriorAmbience.sendColor(]]..objectId..[[); zeit_ccfInteriorAmbience.setOn(]]..objectId..[[,]]..tostring(s['settings.ambient_enabled'])..[[); zeit_ccfInteriorAmbience.updateColor(]]..objectId..[[) ]]); end", "s.ambient_enabled = VALUE{settings.ambient_enabled}"]
+}

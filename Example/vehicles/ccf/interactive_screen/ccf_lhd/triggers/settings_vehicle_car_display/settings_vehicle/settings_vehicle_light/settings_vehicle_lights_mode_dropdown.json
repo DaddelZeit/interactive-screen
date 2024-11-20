@@ -1,0 +1,23 @@
+[
+    {
+        "pos": [ 0.532,0.149,0.653 ],
+        "size": [ 0.052, 0.002, 0.01 ],
+        "id": "settings_vehicle.lights_mode_dropdown_1"
+    },
+    {
+        "pos": [ 0.532,0.149,0.643 ],
+        "size": [ 0.052, 0.002, 0.01 ],
+        "id": "settings_vehicle.lights_mode_dropdown_2"
+    },
+    {
+        "pos": [ 0.532,0.149,0.633 ],
+        "size": [ 0.052, 0.002, 0.01 ],
+        "id": "settings_vehicle.lights_mode_dropdown_3"
+    },
+
+    {
+        "pos": [ 0.532,0.149,0.643 ],
+        "size": [ 0.052, 0.002, 0.03 ],
+        "id": "settings_vehicle.light"
+    }
+]

@@ -1,0 +1,52 @@
+{
+"ccf_dashboard": {
+    "controller": [
+        ["fileName"],
+        ["gauges/screenManager", {
+            "name": "screenManager",
+            "type": "ccf_rhd",
+            "savePath": "temp/vehicles/ccf/USER.SCREENSTATE",
+            "defaultState": "empty"
+            "geExt": "zeit_ccfScreenInteract",
+
+            "extensions": {
+                "moreNavigationData": {
+                    "geExt": "zeit_ccfMoreNavi",
+                    "useStateController": true
+                },
+                "pksaShow": {
+                    "geExt": "zeit_ccfReverseCam",
+                    "camNode": "rb2l",
+                    "texTargetName": "@ccf_reverse_cam",
+                    "electricsName": "ccf_reverse_cam_on"
+                }
+            }
+        }],
+    ]
+},
+"ccf_dashboard_lhd": {
+    "controller": [
+        ["fileName"],
+        ["gauges/screenManager", {
+            "name": "screenManager"
+            "type": "ccf_lhd",
+            "savePath": "temp/vehicles/ccf/USER.SCREENSTATE",
+            "defaultState": "empty"
+            "geExt": "zeit_ccfScreenInteract",
+
+            "extensions": {
+                "moreNavigationData": {
+                    "geExt": "zeit_ccfMoreNavi",
+                    "useStateController": true
+                },
+                "pksaShow": {
+                    "geExt": "zeit_ccfReverseCam",
+                    "camNode": "rb2l",
+                    "texTargetName": "@ccf_reverse_cam",
+                    "electricsName": "ccf_reverse_cam_on"
+                }
+            }
+        }],
+    ]
+},
+}

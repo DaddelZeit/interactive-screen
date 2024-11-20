@@ -1,0 +1,8 @@
+{
+    "path": "/vehicles/ccf/art/chimes/warn.ogg",
+    "volume": 1,
+    "pitch": 1,
+    "node": "int1",
+    "description": "Audio2D",
+    "inside": true
+}

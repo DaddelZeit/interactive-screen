@@ -1,0 +1,8 @@
+{
+    "path": "/vehicles/ccf/art/chimes/button.ogg",
+    "volume": 2,
+    "pitch": 1,
+    "node": "int1",
+    "description": "Audio2D",
+    "inside": true
+}

@@ -1,0 +1,132 @@
+[
+    {
+        "pos": [ 0.405, 0.16, 0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "audio.usb"
+    },
+    {
+        "pos": [ 0.452,0.155,0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "settings_audio"
+    },
+    {
+        "pos": [ 0.499,0.15,0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "audio.playlists"
+    },
+    {
+        "pos": [ 0.546,0.145,0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "audio.fm/dab"
+    },
+    {
+        "pos": [ 0.515,0.149,0.661 ],
+        "size": [ 0.016, 0.002, 0.016 ],
+        "id": "audio.skiplist_f"
+    },
+    {
+        "pos": [ 0.531,0.148,0.661 ],
+        "size": [ 0.016, 0.002, 0.016 ],
+        "id": "audio.skipsong_f"
+    },
+    {
+        "pos": [ 0.547,0.147,0.661 ],
+        "size": [ 0.016, 0.002, 0.016 ],
+        "id": "audio.play"
+    },
+    {
+        "pos": [ 0.563,0.146,0.661 ],
+        "size": [ 0.016, 0.002, 0.016 ],
+        "id": "audio.skipsong_b"
+    },
+    {
+        "pos": [ 0.579,0.145,0.661 ],
+        "size": [ 0.016, 0.002, 0.016 ],
+        "id": "audio.skiplist_b"
+    },
+    {
+        "pos": [ 0.5465,0.145,0.649 ],
+        "size": [ 0.087, 0.005, 0.005 ],
+        "id": "audio.song_progress",
+        "type": "clickWithDistance"
+    },
+
+    {
+        "pos": [ 0.6075,0.205,0.5635 ],
+        "size": [ 0.03, 0.03, 0.03 ],
+        "id": "audio.volume",
+        "type": "scroll"
+    },
+
+    {
+        "pos": [ 0.4,0.16,0.642 ],
+        "size": [ 0.085, 0.005, 0.07 ],
+        "id": "audio.list_scroll",
+        "type": "scroll"
+    },
+    {
+        "pos": [ 0.395,0.155,0.664 ],
+        "size": [ 0.08, 0.002, 0.014 ],
+        "id": "audio.list_entry1"
+    },
+    {
+        "pos": [ 0.395,0.155,0.648 ],
+        "size": [ 0.08, 0.002, 0.014 ],
+        "id": "audio.list_entry2"
+    },
+    {
+        "pos": [ 0.395,0.155,0.632 ],
+        "size": [ 0.08, 0.002, 0.014 ],
+        "id": "audio.list_entry3"
+    },
+    {
+        "pos": [ 0.395,0.155,0.616 ],
+        "size": [ 0.08, 0.002, 0.014 ],
+        "id": "audio.list_entry4"
+    },
+
+
+    /* these need to be in EVERY file */
+    {
+        "pos": [ 0.565,0.205,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.navi",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.532,0.209,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.audio",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.498,0.212,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.settings",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.463,0.216,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.home",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.427,0.219,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.car",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.355,0.225,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.ambience",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.6075,0.205,0.5635 ],
+        "size": [ 0.03, 0.03, 0.03 ],
+        "id": "audio.volume",
+        "type": "scroll"
+    }
+]

@@ -1,0 +1,151 @@
+[
+    {
+        "pos": [ 0.41,0.155,0.668 ],
+        "size": [ 0.09, 0.002, 0.008 ],
+        "id": "settings_general"
+    },
+    {
+        "pos": [ 0.41,0.155,0.659 ],
+        "size": [ 0.09, 0.002, 0.008 ],
+        "id": "settings_general.settings_general_extui"
+    },
+    {
+        "pos": [ 0.41,0.155,0.650 ],
+        "size": [ 0.09, 0.002, 0.008 ],
+        "id": "settings_general.settings_general_lang"
+    },
+    {
+        "pos": [ 0.41,0.155,0.6405 ],
+        "size": [ 0.09, 0.002, 0.008 ],
+        "id": "settings_general.settings_general_units"
+    },
+    {
+        "pos": [ 0.41,0.155,0.6315 ],
+        "size": [ 0.09, 0.002, 0.008 ],
+        "id": "settings_general.settings_general_connectivity"
+    },
+    {
+        "pos": [ 0.41,0.155,0.622 ],
+        "size": [ 0.09, 0.002, 0.008 ],
+        "id": "settings_general.settings_general_system"
+    },
+    {
+        "pos": [ 0.41,0.155,0.613 ],
+        "size": [ 0.09, 0.002, 0.008 ],
+        "id": "settings_general.settings_general_reset"
+    },
+
+    {
+        "pos": [ 0.5405,0.148,0.6465 ],
+        "size": [ 0.034, 0.002, 0.011 ],
+        "id": "settings_general.settings_time_24h"
+    },
+    {
+        "pos": [ 0.5778,0.146,0.6465 ],
+        "size": [ 0.034, 0.002, 0.011 ],
+        "id": "settings_general.settings_time_12h"
+    },
+    {
+        "pos": [ 0.5589,0.146,0.665 ],
+        "size": [ 0.07, 0.002, 0.011 ],
+        "id": "settings_general.settings_general_time.settings_general_time_dropdown"
+    },
+
+    {
+        "pos": [ 0.529,0.149,0.6231 ],
+        "size": [ 0.009, 0.002, 0.008 ],
+        "id": "settings_general.settings_time_manual_offset_h_-"
+    },
+    {
+        "pos": [ 0.54,0.148,0.6231 ],
+        "size": [ 0.012, 0.002, 0.008 ],
+        "id": "settings_general.settings_time_manual_offset_h_reset"
+    },
+    {
+        "pos": [ 0.551,0.147,0.6231 ],
+        "size": [ 0.009, 0.002, 0.008 ],
+        "id": "settings_general.settings_time_manual_offset_h_+"
+    },
+
+    {
+        "pos": [ 0.561,0.146,0.6231 ],
+        "size": [ 0.009, 0.002, 0.008 ],
+        "id": "settings_general.settings_time_manual_offset_m_-"
+    },
+    {
+        "pos": [ 0.572,0.145,0.6231 ],
+        "size": [ 0.012, 0.002, 0.008 ],
+        "id": "settings_general.settings_time_manual_offset_m_reset"
+    },
+    {
+        "pos": [ 0.583,0.144,0.6231 ],
+        "size": [ 0.009, 0.002, 0.008 ],
+        "id": "settings_general.settings_time_manual_offset_m_+"
+    },
+
+    /* needs be in every settings_general file */
+    {
+        "pos": [ 0.405, 0.16, 0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "settings_general"
+    },
+    {
+        "pos": [ 0.452,0.155,0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "settings_gauges"
+    },
+    {
+        "pos": [ 0.499,0.15,0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "settings_audio"
+    },
+    {
+        "pos": [ 0.546,0.145,0.601 ],
+        "size": [ 0.04, 0.005, 0.01 ],
+        "id": "settings_vehicle"
+    },
+
+    /* these need to be in EVERY file */
+    {
+        "pos": [ 0.565,0.205,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.navi",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.532,0.209,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.audio",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.498,0.212,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.settings",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.463,0.216,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.home",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.427,0.219,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.car",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.355,0.225,0.565 ],
+        "size": [ 0.03, 0.015, 0.02 ],
+        "id": "MAINANALOG.ambience",
+        "audioID": 1
+    },
+    {
+        "pos": [ 0.6075,0.205,0.5635 ],
+        "size": [ 0.03, 0.03, 0.03 ],
+        "id": "audio.volume",
+        "type": "scroll"
+    }
+]

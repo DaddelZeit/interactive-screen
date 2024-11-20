@@ -1,0 +1,29 @@
+@font-face {
+  font-family: RobotoBlack;
+  src: url(/ui/common/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: Nasalization;
+  src: url(/ui/common/nasalization-rg.ttf), url(/ui/common/nasalization-rg.ttf); //second is to fix CORS in FFdev
+}
+
+
+body {
+  margin: 0;
+  padding-top: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: RobotoBlack;
+  font-size: 35px;
+  overflow: hidden;
+}
+
+@keyframes fadeinout {
+  0% { opacity: 0.1 }
+ 50% { opacity: 1.0 }
+100% { opacity: 0.1 }
+}

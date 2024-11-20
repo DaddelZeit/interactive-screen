@@ -1,0 +1,76 @@
+{
+    "firststart": true,
+
+    "navi.3d/2d": false,
+    "navi.north_lock": false,
+    "navi.current_destination": "",
+
+    "audio.radioType": 0,
+
+    "settings.time_12h": false,
+    "settings.timezone": 0,
+    "settings.car_name":"HIROCHI",
+
+    "settings.time_manual_offset_h": 0,
+    "settings.time_manual_offset_m": 0,
+
+    "settings.unit_length_num": -1,
+    "settings.unit_temperature_num": -1,
+    "settings.unit_weight_num": -1,
+    "settings.unit_volume_num": -1,
+    "settings.unit_economy_num": -1,
+    "settings.unit_power_num": -1,
+    "settings.unit_torque_num": -1,
+    "settings.unit_energy_num": -1,
+    "settings.unit_pressure_num": -1,
+    "settings.unit_dateformat_num": -1,
+
+    "settings.mute_nav": false,
+    "settings.contact_sort": 0,
+    "settings.bluetooth": true,
+
+    "settings.gauges_right": "navi",
+    "settings.gauges_left": "mode",
+    "settings.gauges_left_economy_slot1": "avg_consumption_reset",
+    "settings.gauges_left_economy_slot2": "avg_consumption_refuel",
+    "settings.gauges_left_economy_slot3": "trip_elapsed",
+    "settings.gauges_left_economy_slot4": "cruise_range",
+
+    "settings.audio_ringtone_active": true,
+    "settings.audio_rear_sensors_active": true,
+    "settings.audio_front_sensors_active": true,
+    "settings.audio_notifications_active": true,
+    "settings.audio_speed_warning_active": false,
+
+    "settings.audio_rear_sensors_volume": 1,
+    "settings.audio_front_sensors_volume": 1,
+    "settings.audio_notifications_volume": 2,
+    "settings.audio_speed_warning_volume": 0.9,
+
+    "settings.vehicle_highbeam_timer": 5,
+    "settings.vehicle_lights_mode": 1,
+    "settings.vehicle_lights_entry_exit": true,
+    "settings.vehicle_lights_entry_exit_timer": 10,
+
+    "settings.vehicle_rear_sensors_active": true,
+    "settings.vehicle_front_sensors_active": true,
+
+    "settings.vehicle_aeb_enabled": true,
+    "settings.vehicle_aeb_mode_enabled": true,
+    "settings.vehicle_aeb_modes": {},
+    "settings.vehicle_aeb_modes_orig": {},
+
+    "settings.vehicle_hill_start_enabled": true,
+    "settings.vehicle_hill_start_mode_enabled": true,
+    "settings.vehicle_hill_start_modes": {},
+
+    "settings.vehicle_hill_descent_enabled": true,
+    "settings.vehicle_hill_descent_mode_enabled": true,
+    "settings.vehicle_hill_descent_modes": {},
+
+    "settings.vehicle_start_stop_active": false,
+
+    "settings.ambient_color": -1,
+    "settings.ambient_brightness": -1,
+    "settings.ambient_enabled": true
+}

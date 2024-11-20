@@ -1,0 +1,17 @@
+[
+    {
+        "pos": [ 0.48,0.146,0.635 ],
+        "size": [ 0.25, 0.005, 0.12 ],
+        "id": "settings_general.settings_general_time"
+    },
+    {
+        "pos": [ 0.5589,0.146,0.665 ],
+        "size": [ 0.07, 0.002, 0.011 ],
+        "id": "settings_general.settings_general_time_dropdown_0"
+    },
+    {
+        "pos": [ 0.5589,0.146,0.654 ],
+        "size": [ 0.07, 0.002, 0.011 ],
+        "id": "settings_general.settings_general_time_dropdown_1"
+    }
+]

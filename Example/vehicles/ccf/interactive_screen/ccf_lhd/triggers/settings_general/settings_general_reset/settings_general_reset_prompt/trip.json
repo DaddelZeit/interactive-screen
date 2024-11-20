@@ -1,0 +1,17 @@
+[
+    {
+        "pos": [ 0.5375,0.149,0.633 ],
+        "size": [ 0.0175, 0.004, 0.007 ],
+        "id": "settings_general.settings_general_reset_prompt_yes_trip"
+    },
+    {
+        "pos": [ 0.5375,0.149,0.633 ],
+        "size": [ 0.0175, 0.004, 0.007 ],
+        "id": "settings_general.settings_general_reset"
+    },
+    {
+        "pos": [ 0.512,0.1525,0.633 ],
+        "size": [ 0.022, 0.004, 0.007 ],
+        "id": "settings_general.settings_general_reset"
+    }
+]
