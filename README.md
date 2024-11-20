@@ -14,6 +14,10 @@ The JBeam is limited to the screens.
 
 The CCF uses two screens: the Infotainment and Gauge screen. Both are connected to the screenManager, however only the infotainment screen uses manager states and triggers.
 
+### Utils
+The Utils folder has zeitScreenUtils.lua file that transforms and condenses the development files to production files.
+See documentation below.
+
 ## Basic Documentation
 ### Screen Folder Layout
 The main folder name, `interactive_screen`, is hardcoded; the following folder(s) may include different versions of the screen under their respective name.
